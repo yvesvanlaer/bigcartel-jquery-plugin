@@ -12,10 +12,8 @@
             currency 	: '£'
         }, options);
 
-        // Future home of "Hello, World!"
         return this.each( function() {
         	var url = api + settings.store + '/products.js';
-           // $(this).text(url);
             $.ajax({
             	url : url,
             	context : this,
@@ -31,8 +29,6 @@
 
 
         function render(products, container){
-			//$(this).text('url');
-			console.log(products);
             $.each(products, function(){
             	var template = $('<' + settings.wrapper + ' />');
             	template.addClass(settings.css).attr('id', this.permalink);
@@ -44,8 +40,6 @@
             	}).html(this.name);
 
             	template.append($('<' + settings.header + ' class="product-title" />').html(link));
-
-            	//template.append($('<' + settings.header + ' />').html(this.name).wrap(link));
             	template.append($('<div class="description" />').html(this.description));
             	template.append($('<div class="price" />').html(settings.currency + parseFloat(this.price).toFixed(2) ));
             	template.append($('<div class="image" />').html($('<img />').attr({
