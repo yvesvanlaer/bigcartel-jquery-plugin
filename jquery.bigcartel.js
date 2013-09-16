@@ -4,12 +4,12 @@
 
     	var api = 'http://api.bigcartel.com/';
     	var settings = $.extend({
-            store       : 'labrecords',
+            store     : 'labrecords',
             complete	: null,
             wrapper 	: 'div',
-            css			: 'bc-product',	
-            header 		: 'h3',
-            currency 	: '£'
+            css			  : 'bc-product',
+            headers   : 'h3',
+            currency  : '£'
         }, options);
 
         return this.each( function() {
@@ -51,7 +51,6 @@
 
             	var cats = $('<ul class="categories" />');
             	$.each(this.categories,function(){
-            		var li = $('<li />');
             		var category_link = $('<a />').attr({
             			href : 'http://' + settings.store + '.bigcartel.com' + this.url,
             			title : this.name,
